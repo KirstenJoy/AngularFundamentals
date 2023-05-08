@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core"
 import { Subject, map } from "rxjs";
-import { EventService } from "./events.service";
+import { EventService } from "./shared/events.service";
 
 @Injectable()
 export class EventListResolver{
