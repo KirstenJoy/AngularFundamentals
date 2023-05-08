@@ -14,13 +14,13 @@ import { EventService } from './shared/index'
   `]
 })
 export class CreateEventComponent {
-  newEvent:any
+  newEvent
   isDirty:boolean = true
   constructor(private router: Router, private eventService:EventService) {
 
   }
 
-  saveEvent(formValues:any) {
+  saveEvent(formValues) {
     this.eventService.saveEvent(formValues)
     this.isDirty = false
     this.router.navigate(['/events'])

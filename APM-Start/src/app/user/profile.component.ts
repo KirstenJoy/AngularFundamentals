@@ -15,9 +15,9 @@ import { Router} from '@angular/router'
   `]
 })
 export class ProfileComponent implements OnInit {
-  profileForm:FormGroup | any
-  private firstName:FormControl| any
-  private lastName:FormControl| any
+  profileForm:FormGroup
+  private firstName:FormControl
+  private lastName:FormControl
 
   constructor(private router:Router, private authService:AuthService) {
 
@@ -33,7 +33,7 @@ export class ProfileComponent implements OnInit {
     })
   }
 
-  saveProfile(formValues:any) {
+  saveProfile(formValues) {
     if (this.profileForm.valid) {
       this.authService.updateCurrentUser(formValues.firstName, formValues.lastName)
       this.router.navigate(['events'])
@@ -43,7 +43,7 @@ export class ProfileComponent implements OnInit {
   validateFirstName() {
     return this.firstName.valid || this.firstName.untouched
   }
-
+  
   validateLastName() {
     return this.lastName.valid || this.lastName.untouched
   }
@@ -51,5 +51,5 @@ export class ProfileComponent implements OnInit {
   cancel() {
     this.router.navigate(['events'])
   }
-
+       
 }

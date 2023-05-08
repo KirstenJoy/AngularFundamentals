@@ -9,15 +9,15 @@ import { Router } from '@angular/router'
   `]
 })
 export class LoginComponent {
-  username:any
-  password:any
-  mouseoverLogin:any
+  username
+  password
+  mouseoverLogin
 
   constructor(private authService:AuthService, private router:Router) {
 
   }
 
-  login(formValues:any) {
+  login(formValues) {
     this.authService.loginUser(formValues.userName, formValues.password)
     this.router.navigate(['events'])
   }

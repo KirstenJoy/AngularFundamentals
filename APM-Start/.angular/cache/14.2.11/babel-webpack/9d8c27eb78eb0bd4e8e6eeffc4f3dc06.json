@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { ProfileComponent } from './profile.component';\nimport { LoginComponent } from './login.component';\nexport const userRoutes = [{\n  path: 'profile',\n  component: ProfileComponent\n}, {\n  path: 'login',\n  component: LoginComponent\n}];","map":null,"metadata":{},"sourceType":"module"}
