@@ -30,16 +30,24 @@ export class ProfileComponent implements OnInit {
     this.lastName = new FormControl(this.authService.currentUser.lastName, Validators.required)
 
     this.profileForm = new FormGroup({
-      firstName: this.firstName,
-      lastName: this.lastName
+    firstName: this.firstName,
+    lastName: this.lastName
     })
   }
 
   saveProfile(formValues) {
     if (this.profileForm.valid) {
       this.authService.updateCurrentUser(formValues.firstName, formValues.lastName)
-      this.toastr.success('Profile Saved')
+      .subscribe(() => {
+        this.toastr.success('Profile Saved')
+      })
     }
+  }
+
+  logout() {
+    this.authService.logout().subscribe(() => {
+      this.router.navigate(['/user/login']);
+    })
   }
 
   validateFirstName() {
